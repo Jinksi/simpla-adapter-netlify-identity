@@ -1,7 +1,7 @@
 {
-  "name": "netlify-identity-adapter",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "simpla-adapter-netlify-identity",
+  "version": "0.1.0",
+  "main": "simpla-adapter-netlify-identity.min.js",
   "author": "Jinksi <ericjinks@gmail.com>",
   "license": "MIT",
   "scripts": {

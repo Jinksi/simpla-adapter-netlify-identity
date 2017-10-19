@@ -20,9 +20,9 @@ if (!debugging) {
 }
 
 export default [{
-  input: 'src/netlify-identity-adapter.js',
+  input: 'src/simpla-adapter-netlify-identity.js',
   output: {
-    file: 'netlify-identity-adapter.min.js',
+    file: 'simpla-adapter-netlify-identity.min.js',
     format: 'umd',
     name: 'SimplaNetlifyIdentity'
   },

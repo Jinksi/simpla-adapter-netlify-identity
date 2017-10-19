@@ -2,7 +2,7 @@
 node_modules
 
 # Built files
-netlify-identity-adapter.min.js
+simpla-adapter-netlify-identity.min.js
 
 # Runtime
 .DS_Store
