@@ -1,0 +1,9 @@
+# Deps
+node_modules
+
+# Built files
+netlify-identity-adapter.min.js
+
+# Runtime
+.DS_Store
+*.log
