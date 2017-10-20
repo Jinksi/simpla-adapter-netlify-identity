@@ -16,6 +16,6 @@
     "no-unused-vars": "warn",
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "linebreak-style": ["error", "unix"],
-    "semi": ["error", "always"]
+    "semi": ["error", "never"]
   }
 }

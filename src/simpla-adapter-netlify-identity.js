@@ -66,6 +66,21 @@ function awaitLogout (payload) {
   return payload
 }
 
+function patchFetch (authUrl) {
+  // HACK: delete me when possible
+  const oldFetch = window.fetch
+  function newFetch (url, config) {
+    if (config && config.headers && config.headers.Authorization) {
+      config.headers.Authorization = config.headers.Authorization.replace('token', 'Bearer')
+    }
+    url = url.replace('https://api.github.com/repos/jinksi/hyperstatic/', `${authUrl}/.netlify/git/github/`)
+    arguments[0] = url
+    arguments[1] = config
+    return oldFetch.apply(this, arguments)
+  }
+  fetch = newFetch
+}
+
 export default class NetlifyIdentityAuthentication {
   constructor ({ site }) {
     if (site) {
@@ -73,6 +88,7 @@ export default class NetlifyIdentityAuthentication {
       setNetlifySite(this._authUrl)
     }
     initNetlifyidentity()
+    patchFetch(this._authUrl)
   }
 
   authenticate () {
