@@ -73,7 +73,10 @@ function patchFetch (authUrl) {
     if (config && config.headers && config.headers.Authorization) {
       config.headers.Authorization = config.headers.Authorization.replace('token', 'Bearer')
     }
-    url = url.replace('https://api.github.com/repos/jinksi/hyperstatic/', `${authUrl}/.netlify/git/github/`)
+    url = url.replace(
+      /https:\/\/api.github.com\/repos\/[\w]+\/[\w]+\//,
+      `${authUrl}/.netlify/git/github/`
+    )
     arguments[0] = url
     arguments[1] = config
     return oldFetch.apply(this, arguments)
